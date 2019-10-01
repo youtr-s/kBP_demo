@@ -1,0 +1,21 @@
+{
+    "appID": 379,
+    "appName": "kBP_demo",
+    "type": "Customization",
+    "scope": "ALL",
+    "uploadConfig": {
+        "desktop": {
+            "js": [
+                "node_modules/@kintone/kintone-ui-component/dist/kintone-ui-component.min.js",
+                "kBP_demo/source/js/script.js"
+            ],
+            "css": [
+                "node_modules/@kintone/kintone-ui-component/dist/kintone-ui-component.min.css",
+                "kBP_demo/source/css/style.css"
+            ]
+        },
+        "mobile": {
+            "js": []
+        }
+    }
+}
