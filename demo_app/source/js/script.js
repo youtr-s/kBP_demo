@@ -5,16 +5,18 @@
     createTemplateBtn();
     return event;
   });
-  // webpack: no && kintone-UI-component: yesとした場合に自動でkucのmin.jsをアップローダにセットして欲しい
   function createTemplateBtn() {
     var headerMenu = kintone.app.getHeaderMenuSpaceElement();
     // extentionの補完機能で作成
+    // kuc-button-on でひな形作成
     var button = new kintoneUIComponent.Button({text: 'レコード作成'});
     var btnDiv = document.createElement("div");
     btnDiv.className = "headerMenuBtn";
     headerMenu.appendChild(button.render());
     button.on('click', function(event) {
       console.log('on click');
+
+      // ka-record-add-recordでひな形作成
       var requestBody = {
         'app': kintone.app.getId(),
         'record': {
@@ -26,23 +28,23 @@
            }
         }
       }
-      
       kintone.api(kintone.api.url('/k/v1/record', true), 'POST', requestBody, function(resp) {
         // success
         console.log(resp);
+        // kuc-noitfy-popupでひな形作成
         var notifyPopup = new kintoneUIComponent.NotifyPopup({
           text: 'レコード登録が完了しました',
           type: 'success'
         });
         headerMenu.appendChild(notifyPopup.render());
         notifyPopup.on('click', function(event) {
-          // 閉じるボタンを押した際に動かない
           console.log('on click');
           location.reload();
         });
       }, function(error) {
         // error
         console.log(error);
+        // kuc-noitfy-popupでひな形作成
         var notifyPopup = new kintoneUIComponent.NotifyPopup({
           text: 'レコード登録に失敗しました',
           type: 'error'
