@@ -1,12 +1,12 @@
 {
-  "name": "kBP_demo",
+  "name": "kbp_demo",
   "version": "0.0.1",
   "description": "kintone customization project",
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@kintone/kintone-ui-component": "^0.2.0",
-    "@kintone/kintone-js-sdk": "^0.2.0"
+    "@kintone/kintone-ui-component": "^0.4.0",
+    "@kintone/kintone-js-sdk": "^0.6.0"
   },
   "devDependencies": {
     "local-web-server": "^2.6.1",
